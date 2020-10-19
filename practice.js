@@ -107,7 +107,7 @@ console.log(removeChar('i', 'mississippi')); // mssspp
 // check if string contains an int. if not, return error message.
 // build new date from all integers in string. if [0] and [2] are '0', just add slashes.
 // check for length of string. if length is > 10 and the last 4 chars are not '2020', add '20' on the end.
-const formatDate = stringInput => {
+const formatDate = (stringInput, dateFormatType) => {
   let unwantedCharacters = 'abcdefghijklmnopqrstuvwxyz';
   let numberString = '0123456789';
   let dateCharacters = [];
@@ -144,12 +144,29 @@ const formatDate = stringInput => {
   if ( day.length === 1 ) {
     day = `0${day}`;
   }
-  return `${month}/${day}/${year}`;
+
+  let formattedDate;
+  switch(dateFormatType) {
+    case 1: {
+      formattedDate = `${year}${month}${day}`;
+    } break;
+    case 2: {
+      formattedDate = `${month}-${day}-${year}`;
+    } break;
+    case 3: {
+      formattedDate = `${month}.${day}.${year}`;
+    } break;
+    default: {
+      formattedDate = `${month}/${day}/${year}`;
+    } break;
+  }
+
+  return formattedDate;
 }
 
 console.log(formatDate('12-12-2020')); // 12/12/2020
 console.log(formatDate('12/12/2020')); // 12/12/2020
 console.log(formatDate('we were there 9-23-18')); // 09/23/2018
 console.log(formatDate('5.23.05')); // 05/23/2005
-console.log(formatDate('12-12/20')); // 12/12/2020
-console.log(formatDate('4-3/20')); // 04/03/2020
+console.log(formatDate('12-12/20', 3)); // 12/12/2020
+console.log(formatDate('4-3/20', 1)); // 04/03/2020
