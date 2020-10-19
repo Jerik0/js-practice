@@ -54,7 +54,7 @@ const isThreeDigit = num => {
   return num >= 100 && num < 1000;
 }
 
-// INTERMEDIATE SECTION
+// ======================= INTERMEDIATE SECTION ======================= 
 
 // Create a function called isPangram that determines whether or not a string is a pangram.
 const isPangram = str => {
@@ -167,3 +167,25 @@ console.log(formatDate('we were there 9-23-18')); // 09/23/2018
 console.log(formatDate('5.23.05', 1)); // 20050523
 console.log(formatDate('12-12/20', 3)); // 12.12.2020
 console.log(formatDate('4-3/20', 2)); // 04-03-2020
+
+// ======================= CRUD OPERATIONS AND ARRAY STUFF ======================= 
+
+// Write a function called search that searches for an item (x) in an array (array).
+
+// Write a function called printAlternate that prints every other element of an element that
+// contains multiple elements. If the array doesn't contain multiple elements, don't print.
+
+// Write a function called findMaxAndMin that takes in an array and returns the maximum and 
+// minimum values found in the array.
+
+// Write a function called printSecondLargest that takes in an array and returns the second
+// largest number in the array.
+
+// Write a function called sum that takes in an array and returns the sum of all its elements.
+
+// Write a function called reverse that takes in an array and returns the reverse of its contents.
+
+// Write a function called rotate that takes in an array and a rotation number (n) as arguments, and 
+// returns the array 'rotated' by n elements. The 'rotated' elements will appear on the end of the
+// array, and cut from the beginning of it.
+
