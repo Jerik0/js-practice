@@ -102,11 +102,8 @@ console.log(removeChar("a", "banana")); // bnn
 console.log(removeChar('i', 'mississippi')); // mssspp
 
 // Write a function called formatDate that takes in a date of any kind and formats it to be in the format
-// 01/01/2020
-
-// check if string contains an int. if not, return error message.
-// build new date from all integers in string. if [0] and [2] are '0', just add slashes.
-// check for length of string. if length is > 10 and the last 4 chars are not '2020', add '20' on the end.
+// 01/01/2020. Check if string contains an int. if not, return error message.
+// BONUS: Add secondary parameter that changes what date format is output.
 const formatDate = (stringInput, dateFormatType) => {
   let unwantedCharacters = 'abcdefghijklmnopqrstuvwxyz';
   let numberString = '0123456789';
