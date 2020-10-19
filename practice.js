@@ -112,17 +112,18 @@ const formatDate = (stringInput, dateFormatType) => {
   let numberString = '0123456789';
   let dateCharacters = [];
 
-  // Create array of only numerics and separating characters with no spaces.
+  // Create array of only numerics and separating characters ("/", "." or "-") from the input string with no spaces.
   stringInput.replace(/\s/g, '').split('').forEach(ch => {
     if (!unwantedCharacters.includes(ch)) {
       dateCharacters.push(ch);
     }
   })
 
+  // Create a string for the date to be split into day, month, and year.
   let dateString = dateCharacters.join('');
   let nonNumericIndexesArray = [];
 
-  // assign variables for each set of numeric characters between non-numeric characters.
+  // Assign variables for each set of numeric characters between non-numeric characters.
   dateCharacters.forEach((el, ind) => {
     if(!numberString.includes(parseInt(el))) {
       nonNumericIndexesArray.push(ind);
@@ -160,13 +161,12 @@ const formatDate = (stringInput, dateFormatType) => {
       formattedDate = `${month}/${day}/${year}`;
     } break;
   }
-
   return formattedDate;
 }
 
 console.log(formatDate('12-12-2020')); // 12/12/2020
 console.log(formatDate('12/12/2020')); // 12/12/2020
 console.log(formatDate('we were there 9-23-18')); // 09/23/2018
-console.log(formatDate('5.23.05')); // 05/23/2005
-console.log(formatDate('12-12/20', 3)); // 12/12/2020
-console.log(formatDate('4-3/20', 1)); // 04/03/2020
+console.log(formatDate('5.23.05', 1)); // 20050523
+console.log(formatDate('12-12/20', 3)); // 12.12.2020
+console.log(formatDate('4-3/20', 2)); // 04-03-2020
